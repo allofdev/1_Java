@@ -1,0 +1,5 @@
+package com.kh.hw2.model.vo;
+
+public class Book {
+
+}

@@ -1,0 +1,72 @@
+package com.kh.chap03_map.part01_hashMap.run;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.kh.chap03_map.part01_hashMap.model.vo.Snack;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+		HashMap hm = new HashMap();
+		
+		// 새로운 객체를 추가하고자 할때 key + 객체(value) 세트로 담아야됨!!
+		
+		// K => key
+		// V => value
+		
+		// 1. put(K key, V value)
+		hm.put("다이제", new Snack("초코맛", 1500));
+		hm.put("칸초", new Snack("단맛", 700));
+		hm.put("새우깡", new Snack("짠맛", 500));
+		hm.put("포테이토칩", new Snack("짠맛", 500));
+		
+		System.out.println(hm); // 저장순서 유지 안됨!!, value값이 중복되도 key값이 중복되지 않기 때문에 잘 담긴다!!
+		hm.put("새우깡", new Snack("매운맛", 700)); // 키 값이 중복되면 마지막 value값으로 덮어씌워짐!!!
+		System.out.println(hm);
+		
+		
+		// 2. get(K key) : V
+		Snack s = (Snack)hm.get("다이제");
+		System.out.println(s);
+		
+		
+		// 3. size() : int
+		System.out.println("갯수 : " + hm.size());
+		
+		
+		// 4. replace(K key, V value)
+		hm.replace("포테이토칩", new Snack("겁나짠맛", 1000));
+		// list 했던거 예시 list.set(1, new Music())		
+		System.out.println(hm);
+
+		
+		// 5. remove(Obect key)
+		hm.remove("포테이토칩");
+		System.out.println(hm);
+		
+		
+		
+		
+		
+		// hm 담겨있는 모든 개체들에 순차적으로 접근 가능
+		
+		
+		
+		
+		// for each 문 (향상된 for) => 사용 불가
+		/*
+		for(Object o : hm) {
+			
+		}
+		*/
+		
+		// ArrayList 사용불가
+		// ArrayList list = new ArrayList();
+		
+		Iterator it = hm.iterator();
+		
+	}
+	
+}

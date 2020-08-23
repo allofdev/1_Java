@@ -1,0 +1,50 @@
+package com.kh.chap02_set.part02_treeSet.run;
+
+import java.util.TreeSet;
+
+import com.kh.chap02_set.part02_treeSet.model.vo.Person;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+		TreeSet ts1 = new TreeSet();
+		
+		ts1.add(new String("하하하"));
+		ts1.add(new String("나나나"));
+		ts1.add(new String("다다다"));
+		ts1.add(new String("가가가"));
+		ts1.add(new String("핳핳핳"));
+		ts1.add(new String("나나나"));
+		
+		System.out.println(ts1); // 순서유지X, 중복허용X
+		
+		TreeSet ts2 = new TreeSet();
+		
+		ts2.add(new Person("공유", 40, 100));
+		ts2.add(new Person("홍길동", 24, 40));
+		ts2.add(new Person("김말똥", 26, 20));
+		ts2.add(new Person("공유", 20, 60));
+		
+		System.out.println(ts2); // Person 클래스에서 이름값만을 기준으로 오름차순 정렬하게함
+								 // 공유가 중복되어서 한개가 없어짐
+		
+		// TreeSet은 내부적으로 객체들이 추가될때 compareTo메소드로 비고하면서 추가 됨!!
+		
+		// HashSet은 equlas
+		
+		// compareTo에 기술되어있는 정렬기준이 똑같을 경우 다른 필드값들이 달라도 동일객체로 판단해버림!! (중복값허용x)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

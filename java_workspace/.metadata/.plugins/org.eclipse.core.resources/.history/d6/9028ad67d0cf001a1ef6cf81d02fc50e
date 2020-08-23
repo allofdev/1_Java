@@ -1,0 +1,52 @@
+package com.hw1.model.dao;
+import java.util.Scanner;
+
+public class FileDao {
+
+	// 필드
+	// default (~)
+	Scanner sc = new Scanner(System.in);
+	
+	// 기본생성자
+	public FileDao() {}
+	
+	// 프로젝트 --> 파일 (출력)
+	public void fileSave() {
+		
+	StringBuilder sb = new StringBuilder();	
+	
+		while(true) {
+			
+			String str = sc.nextLine();
+			
+			if(str.equals("exit")) {
+				break;
+			}else {
+				sb = str;
+			}
+
+				
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
+	// 프로젝트 <-- 파일 (입력)
+	public void fileOpen() {
+		
+	}
+	
+	public void fileEdit() {
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,11 @@
+package com.kh.chap03_map.part02_properties.run;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+		// Properties : Map 계열임 =>  Key, Value 세트로 저장
+		// 단, Key값과 Value값이 String이다.
+		
+	}
+}

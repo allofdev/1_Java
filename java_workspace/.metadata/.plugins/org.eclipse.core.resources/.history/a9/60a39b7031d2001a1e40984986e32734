@@ -1,0 +1,5 @@
+package com.kh.chap02_set.part01_hashSet.model.vo;
+
+public class Person {
+
+}

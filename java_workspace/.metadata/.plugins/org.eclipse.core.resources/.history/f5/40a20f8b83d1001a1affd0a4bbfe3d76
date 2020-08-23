@@ -1,0 +1,31 @@
+package com.kh.t2;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+
+		
+}
+
+
+	public void fileSave(){
+	
+		try(FileWriter fw = new FileWriter("practice.txt")) {
+			fw.write("æ»≥Á«œººø‰");
+			fw.write("\n");
+			fw.write('k');
+			fw.write("iwi");
+	
+			char[] cArr = {'a', 'p', 'p', 'l', 'e'};
+			
+			fw.write(cArr);
+	
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

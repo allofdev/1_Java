@@ -1,0 +1,213 @@
+package com.kh.chap01_list.part02_mvc.view;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.kh.chap01_list.part02_mvc.controller.MusicController;
+import com.kh.chap01_list.part02_mvc.model.vo.Music;
+
+public class MusicMenu {
+
+	// 필드
+	// 해당 이 클래스 전역에서 sc 바로 쓸 수 있게끔(전역변수)
+	private Scanner sc = new Scanner(System.in);
+	// 바로 Controller 요청 할 수 있게끔
+	private MusicController mc = new MusicController();
+	
+	// 첫 화면 메소드
+	/**
+	 *  * 프로그램 실행 시 사용자가 보게될 첫 화면
+	 */
+	public void mainMenu() {
+		
+		while(true) {
+			System.out.println("\n★_______________________★");
+			System.out.println("Welcome  별밤");
+			System.out.println("1. 신규 곡 추가");
+			System.out.println("2. 곡 전체 조회");
+			System.out.println("3. 특정 곡 검색");
+			System.out.println("4. 특정 곡 삭제");
+			System.out.println("5. 특정 곡 수정");
+			System.out.println("6. 곡 정렬 하기");
+			System.out.println("0. 프로그램 종료");
+			System.out.println("★_______________________★");			
+			System.out.print("★메뉴선택 : ");
+			int menu = sc.nextInt();
+			sc.nextLine();
+			
+			switch(menu) {
+			case 1: insertMusic(); break;
+			case 2: selectList(); break;
+			case 3: searchMusic(); break;
+			case 4: removeMusic(); break;
+			case 5: reviseMusic(); break;
+			case 6: sortMusic(); break; // 정렬
+			case 0: System.out.println("프로그램 종료!"); return;
+			default : System.out.println("다시쓰세요!"); break;
+			}
+			
+		}
+		
+	}
+	
+	/**
+	 * 1. 신규 곡 추가하는 화면
+	 */
+	public void insertMusic() {
+		
+		System.out.println("\n===신규 곡 추가===");
+		System.out.print("제목 입력 : ");
+		String title = sc.nextLine();
+		
+		System.out.print("가수 입력 : ");
+		String artist = sc.nextLine();
+		
+		// 곡 추가 요청! (Controller 메소드 호출)
+		
+		
+		//방법1. 따로 보내기
+		//mc.insertMusic(title, artist);
+		
+		//방법2. Music객체를 만들어서 한번에 보내기
+		mc.insertMusic(new Music(title, artist));
+		
+		System.out.println("성공적으로 곡이 추가되었습니다.");
+	}
+	
+	/**
+	 * 2. 곡 전체 조회 하는 화면
+	 */
+	public void selectList() {
+		
+		System.out.println("\n===곡 전체 조회===");
+		
+		// 곡 전체 조회요청!! (Controller 메소드 호출!!)
+		ArrayList<Music> list = mc.selectList();
+		
+		// 리스트가 비어있을 경우 --> 존재하는 곡이 없다란 소리
+		// inEmpty() - 리스트가 비었을경우 true/ 있을경우 false
+		if(list.isEmpty()) {	// 리스트가 비어있을 경우
+			System.out.println("곡이 존재하지 않습니다.");
+		}else {					// 리스트가 존재하는 경우
+			for(Music m : list) {
+				System.out.println(m);
+			}
+			//System.out.println(list); list를 그냥 출력하면 개행없이 출력됨
+		}
+		
+	}
+	
+	/**
+	 * 3. 곡 검색하는 화면
+	 */
+	public void searchMusic() {
+		
+		System.out.println("\n===특정 곡 검색===");
+		
+		System.out.println("1. 제목으로 검색");
+		System.out.println("2. 가수명으로 검색");
+		System.out.println("3. 제목+가수명으로 검색");
+		System.out.print("번호 선택 : ");
+		int search = sc.nextInt();
+		
+		System.out.print("검색할 곡 키워드 : ");
+		sc.nextLine();
+		String keyword = sc.nextLine();
+		
+		// 검색 요청 하기!! (Controller에 메소드 호출!!); 
+		ArrayList<Music> searchList = mc.searchMusic(keyword, search);
+		
+		if(searchList.isEmpty()) { // 비어있을 경우 => 검색결과 없음
+			System.out.println(keyword + " 에 대한 검색된 곡이 없습니다.");
+		}else {
+			for(Music m : searchList) {
+				System.out.println(m);
+			}
+			
+		}
+		
+	}
+	
+	/**
+	 * 4. 곡 삭제 하는 화면
+	 */
+	public void removeMusic() {
+		
+		System.out.println("\n===특정 곡 삭제===");
+		
+		System.out.print("삭제할 곡 제목을 입력해주세요 : ");
+		
+		String remove = sc.nextLine();
+		
+		int result = mc.removeMusic(remove);
+		
+		if(result==0) {
+			System.out.println("곡이 존재하지 않습니다.");
+		}else{
+			System.out.println(result + " 개의 곡을 삭제하였습니다.");
+		}
+		
+	}
+	
+	/**
+	 * 5. 곡 수정 하는 화면
+	 * mc에 두개의 메소드를 이용.
+	 * (1) 곡이 존재하지 않으면 메인화면으로
+	 * (2) 곡이 존재하면 다음메소드에서 수정 진행
+	 */
+	public void reviseMusic() {
+		
+		System.out.println("\n===특정 곡 수정===");
+		
+		System.out.print("수정할 곡 제목을 입력해주세요 : ");
+		
+		String revise = sc.nextLine();
+		
+		boolean b = mc.reviseMusic1(revise);
+		
+		if(b==false) {
+			System.out.println("곡이 존재하지 않습니다.");
+			return;
+		}
+		
+		ArrayList<Music> list = mc.selectList();
+		
+		for(int i=0; i<list.size(); i++) {
+			if(revise.equals(list.get(i).getTitle())) {
+				System.out.println(list.get(i));
+			}
+		}
+		
+		System.out.print("수정할 제목 입력 : ");
+		String title = sc.nextLine();
+		System.out.print("수정할 가수 입력 : ");
+		String artist = sc.nextLine();
+		
+		mc.reviseMusic2(revise, title, artist);
+		System.out.print("곡을 수정하였습니다.");
+		
+	}
+	
+	/**
+	 * 6. 곡 정렬한 결과 조회하기
+	 */
+	public void sortMusic() {
+		System.out.println("\n===곡 정렬 하기===");
+		System.out.println("1. 가수명 오름차순 정렬");
+		System.out.println("2. 가수명 내림차순 정렬");
+		System.out.println("3. 곡명 오름차순 정렬");
+		System.out.println("4. 곡명 내림차순 정렬");
+		System.out.println("번호 선택 : ");
+		int menu = sc.nextInt();
+		
+		// 곡 정렬 조회 요청! (Controller 메소드 호출!)
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.kh.hw2.model.vo;
+
+public class Book {
+
+	// ÇÊµå
+	private int bNo;
+	private String title;
+	private int category;
+	private String author;
+}

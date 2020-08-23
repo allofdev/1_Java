@@ -1,0 +1,8 @@
+package com.kh.practice1.model.dao;
+
+import com.kh.practice1.model.vo.Book;
+
+public class BookDao {
+
+	
+}

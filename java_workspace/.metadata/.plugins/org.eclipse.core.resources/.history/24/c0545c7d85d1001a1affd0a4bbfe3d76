@@ -1,0 +1,14 @@
+package com.kh.practice1.model.dao;
+
+import com.kh.practice1.model.vo.Book;
+
+public class BookDao {
+
+	public void fileSave() {
+		
+		Book b = new Book("자바를 정복하자", 35000);
+		
+		
+	}
+	
+}

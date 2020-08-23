@@ -1,0 +1,25 @@
+package com.kh.hw2.model.vo;
+
+public class Book {
+
+	// 필드
+	private int bNo;
+	private String title;
+	private int category;
+	private String author;
+	
+	// 기본 생성자
+	public Book() {}
+	
+	// 매개변수 생성자
+	public Book(int bNo, String title, int category, String author) {
+		super();
+		this.bNo = bNo;
+		this.title = title;
+		this.category = category;
+		this.author = author;
+	}
+	
+	
+	
+}

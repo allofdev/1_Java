@@ -1,0 +1,22 @@
+package com.kh.hw2.controller;
+
+import com.kh.hw2.model.vo.Book;
+import java.util.ArrayList;
+
+public class BookManager {
+
+	private ArrayList<Book> list = new ArrayList<>();
+	private Book b = new Book();
+	
+	public void insertBook(Book b) {
+		b.setbNo(b.getbNo()+1);
+		list.add(b);
+	}
+	
+	
+	public ArrayList<Book> selectList() {
+		return list;
+	}
+	
+	
+}

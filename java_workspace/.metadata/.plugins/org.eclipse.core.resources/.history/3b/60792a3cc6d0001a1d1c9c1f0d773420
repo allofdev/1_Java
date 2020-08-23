@@ -1,0 +1,6 @@
+package com.kh.chap01_list.part02_mvc.model.sort;
+
+// 곡명 오름차순 정렬기준
+public class TitleAsc {
+
+}

@@ -1,0 +1,25 @@
+package com.kh.chap01_list.part02_mvc.model.sort;
+
+import java.util.Comparator;
+
+import com.kh.chap01_list.part02_mvc.model.vo.Music;
+
+public class ArtistDesc implements Comparator<Music>{
+
+	@Override
+	public int compare(Music o1, Music o2) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		// compare(m1, m2) => 양수값 반환시 자리변경!
+		//         o1, o2
+		
+		
+		
+		return 0;
+	}
+
+
+
+}

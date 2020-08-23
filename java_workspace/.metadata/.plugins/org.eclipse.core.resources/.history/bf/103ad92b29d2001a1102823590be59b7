@@ -1,0 +1,72 @@
+package com.kh.hw2.model.vo;
+
+public class Book {
+
+	// 필드
+	private int bNo;
+	private String title;
+	private int category;
+	private String author;
+	
+	// 기본 생성자
+	public Book() {}
+	
+	// 매개변수 생성자
+	public Book(String title, int category, String author) {
+		super();
+		this.title = title;
+		this.category = category;
+		this.author = author;
+	}
+
+	// setter/getter 메소드
+	public int getbNo() {
+		return bNo;
+	}
+
+	public void setbNo(int bNo) {
+		this.bNo = bNo;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getCategory() {
+		return category;
+	}
+
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	// toString 메소드
+	@Override
+	public String toString() {
+		
+		switch(category) {
+		case 1: break;
+		case 2; break;
+		case 3; break;
+		case 4; break;
+		}
+		
+		
+		return "Book [bNo=" + bNo + ", title=" + title + ", category=" 
+
+		+ ", author=" + author + "]";
+	}
+	
+}

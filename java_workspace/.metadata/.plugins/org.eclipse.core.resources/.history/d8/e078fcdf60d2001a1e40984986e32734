@@ -1,0 +1,18 @@
+package com.kh.chap03_map.part02_properties.run;
+
+public class propertiesTest2 {
+
+	public static void main(String[] args) {
+		
+		Properties prop = new Properties(); // 비어있는상태
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

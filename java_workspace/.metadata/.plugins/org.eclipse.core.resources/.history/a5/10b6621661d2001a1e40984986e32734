@@ -1,0 +1,29 @@
+package com.kh.chap03_map.part02_properties.run;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class propertiesTest2 {
+
+	public static void main(String[] args) {
+		
+		Properties prop = new Properties(); // 비어있는상태
+		
+		try {
+			prop.load(new FileInputStream("test.properties"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(prop);
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

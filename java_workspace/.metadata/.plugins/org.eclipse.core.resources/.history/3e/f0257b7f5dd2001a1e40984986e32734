@@ -1,0 +1,16 @@
+package com.kh.chap03_map.part02_properties.run;
+
+import java.util.Properties;
+
+public class Run {
+
+	public static void main(String[] args) {
+		
+		// Properties : Map 계열임 =>  Key, Value 세트로 저장
+		// 단, Key값과 Value값이 String이다.
+		
+		Properties prop = new Properties();
+		
+		// Map 계열이기때문에 put메소드 사용가능하긴 함
+	}
+}

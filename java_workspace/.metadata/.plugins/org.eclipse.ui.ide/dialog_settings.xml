@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ResourceNavigator">
+		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1592815324727"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
+			<item value="C:\java_workspace\12_IO"/>
+			<item value="C:\java_workspace\10_API"/>
+			<item value="C:\Users\user2\Desktop\추가할 프로젝트\07_ObjectArray_Homework_Answer"/>
+			<item value="C:\Users\user2\Desktop\추가할 프로젝트\06_Object_Homework_Answer"/>
+			<item value="F:\01_JavaWorkspace\03_Homework_Total_Answer"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\PC\Desktop\12_IO.zip"/>
+			<item value="C:\Users\PC\Desktop\12_IO_Homework_Kimnamgyu.zip"/>
+			<item value="C:\Users\PC\Desktop\10_API_Homework.zip"/>
+			<item value=""/>
+		</list>
+	</section>
+</section>
